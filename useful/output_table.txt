@@ -1,0 +1,12 @@
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+        N & x & y & x*x & y*y & x*y \\ \hline
+        1 & 0,024 & 11 & 0,00059 & 114,9 & 0,26 \\ \hline
+        2 & 0,012 & 5,1 & 0,00015 & 26,0 & 0,06 \\ \hline
+        3 & 0,008 & 3,6 & 0,00007 & 13,0 & 0,03 \\ \hline
+        4 & 0,006 & 2,6 & 0,00004 & 6,8 & 0,02 \\ \hline
+        ср & 0,013 & 5,5 & 0,00021 & 40,2 & 0,09 \\ \hline
+    \end{tabular}
+\end{table}
