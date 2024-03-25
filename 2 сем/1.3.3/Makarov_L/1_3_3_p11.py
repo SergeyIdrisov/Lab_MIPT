@@ -1,13 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 from useful.base import getting_k_b_from_data
 
 
-data_file_names = ["data_1.data", "data_2.data"]
+data_file_names = ["data_1-p-q.data", "data_2-p-q.data"]
 ranges = {
-    "data_1.data": [0, 500, 0.2, 8.5],
-    "data_2.data": [0, 400, 1, 17.5]
+    "data_1-p-q.data": [0, 500, 0.2, 8.5],
+    "data_2-p-q.data": [0, 400, 1, 17.5]
 }
 
 
