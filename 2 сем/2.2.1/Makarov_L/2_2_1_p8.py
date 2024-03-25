@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from math import log
-from base import getting_k_b_from_data
+from useful.base import getting_k_b_from_data
 
 
 # reading data from files
