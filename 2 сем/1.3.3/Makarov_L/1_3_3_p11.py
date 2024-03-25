@@ -5,7 +5,7 @@ from useful.base import getting_k_b_from_data
 
 data_file_names = ["data_1-p-q.data", "data_2-p-q.data"]
 ranges = {
-    "data_1-p-q.data": [0, 500, 0.2, 8.5],
+    "data_1-p-q.data": [0, 400, 0.2, 8.5],
     "data_2-p-q.data": [0, 400, 1, 17.5]
 }
 
@@ -19,9 +19,11 @@ for data_file_name in data_file_names:
 
     Q1_lam = np.array(Q1_all[:laminar + 1])
     P1_lam = np.array(P1_all[:laminar + 1])
+    print(Q1_lam)
 
     Q1_turb = np.array(Q1_all[laminar:])
     P1_turb = np.array(P1_all[laminar:])
+    print(Q1_turb)
 
 
     x_lam, y_lam, sigma_x_lam, sigma_y_lam, k_lam, sigma_k_lam, b_lam, sigma_b_lam = (
@@ -29,6 +31,10 @@ for data_file_name in data_file_names:
 
     x_turb, y_turb, sigma_x_turb, sigma_y_turb, k_turb, sigma_k_turb, b_turb, sigma_b_turb = (
         getting_k_b_from_data(x=P1_turb, y=Q1_turb, sigma_x=[], sigma_y=[], need_b=True))
+
+    print(f"lam k: {k_lam}, b: {b_lam}, sigma_k: {sigma_k_lam}, sigma_b: {sigma_b_lam}")
+    print(f"turb k: {k_turb}, b: {b_turb}, sigma_k: {sigma_k_turb}, sigma_b: {sigma_b_turb}")
+    print()
 
     fig = plt.figure(figsize=(8, 6), dpi=100)
     plt.ylabel("$Q, л/мин$")

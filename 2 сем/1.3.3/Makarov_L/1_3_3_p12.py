@@ -12,12 +12,15 @@ data = {
 
 for n in [1, 2]:
     X, L, P, ranges = data[n]
-    X = np.array(X)
-    L = np.array(L)
-    P = np.array(P)
+    # X = np.array(X)
+    # L = np.array(L)
+    # P = np.array(P)
 
     x, y, sigma_x, sigma_y, k, sigma_k, b, sigma_b = (
         getting_k_b_from_data(x=X[:3], y=P[:3], sigma_x=[], sigma_y=[], need_b=True))
+
+    print(f"k: {k}, b: {b}, sigma_k: {sigma_k}, sigma_b: {sigma_b}")
+    print()
 
     fig = plt.figure(figsize=(8, 6), dpi=100)
     plt.xlabel("$x, см$")
