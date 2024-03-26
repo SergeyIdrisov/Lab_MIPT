@@ -336,7 +336,7 @@ colorlinks=true,urlcolor=blue
 
 \clearpage
 
-\subsection{Измерение зависимости расхода от радиуса при выбранном градиенте}
+\subsection{Измерение зависимости расхода от радиуса при выбранном градиенте}\label{p:10}
 
 Данный пункт работы не выполнялся.
 
@@ -478,9 +478,104 @@ colorlinks=true,urlcolor=blue
 
 \subsection{Зависимость давления от координаты}
 
-Построим график зависимости давления от координаты подключения микроманометра. При ламинарном тесении эта зависимость должна быть прямой, поэтому можем воспользовать МНК.
+Построим график зависимости давления от координаты подключения микроманометра. При ламинарном тесении эта зависимость должна быть прямой, поэтому можем воспользовать МНК. В данном случае $x = \Delta P$, а $y = Q$. Для аппроксимации наилучшей прямой воспользуемся формулой:
 
+\begin{equation}\label{eq:mnk}
+    k = \frac{\langle xy\rangle - \langle x \rangle \langle y \rangle}{\langle x^2 \rangle - \langle x \rangle^2},
+    \ \text{а} \ \  b = \langle y \rangle - k\langle x \rangle
+\end{equation}
 
+Погрешности для $k$ и $b$ рассчитываются по формулам:
+
+\begin{equation}
+    \sigma_k = \frac{1}{\sqrt{n}} \sqrt{\frac{\langle y^2 \rangle - \langle y \rangle^2}{\langle x^2 \rangle - \langle x \rangle^2} - k^2}
+\end{equation}
+
+\begin{equation}
+    \sigma_b = \sigma_k\sqrt{\langle x^2 \rangle - \langle x \rangle^2}
+\end{equation}
+5
+Посчитаем значение для точек ламинарного течения для обоих труб:
+
+\begin{equation*}
+    k_1 = \frac{3187,066 - 44,3 \cdot 63,5}{2787,67 - {44,3}^2} \approx 0,45 \ \text{Па}/\text{см}
+\end{equation*}
+\begin{equation*}
+    b_1 = 63,5 - 0,45 \cdot 44,3 \approx 43,5 \ \text{па}
+\end{equation*}
+\begin{equation*}
+    \sigma_{k1} = \frac{1}{\sqrt{3}} \sqrt{\frac{4204,172 - {63,5}^2}{2787,67 - {44,3}^2} - {0,45}^2} \approx 0,02 \ \text{Па}/\text{см}
+\end{equation*}
+\begin{equation*}
+    \sigma_{b1} = 0,02 \sqrt{2787,67 - {44,3}^2} \approx 0,6 \ \text{Па}
+\end{equation*}
+
+\begin{equation*}
+    k_2 = \frac{1289,121 - 43,8 \cdot 26,5}{2743,58 - {43,8}^2} \approx 0,16 \ \text{Па}/\text{см}
+\end{equation*}
+\begin{equation*}
+    b_2 = 26,5 - 0,16 \cdot 43,8 \approx 19,6 \ \text{па}
+\end{equation*}
+\begin{equation*}
+    \sigma_{k2} = \frac{1}{\sqrt{3}} \sqrt{\frac{721,436 - {26,5}^2}{2743,58 - {43,8}^2} - {0,16}^2} \approx 0,02 \ \text{Па}/\text{см}
+\end{equation*}
+\begin{equation*}
+    \sigma_{b2} = 0,02 \sqrt{2743,58 - {43,8}^2} \approx 0,4 \ \text{Па}
+\end{equation*}
+
+Нанесём график для трубы 1 и для трубы 2 на рис. \ref{graph:p-x-1} и на рис. \ref{graph:p-x-2} соответственно.
+
+\begin{figure}[h!]
+        \centering
+	\includegraphics[width=1\textwidth]{graph_p-x_1.png}
+	\caption{\textit{График зависимости $P$ от $x$ для первой трубы}}
+	\label{graph:p-x-1}
+\end{figure}
+
+\begin{figure}[h!]
+        \centering
+	\includegraphics[width=1\textwidth]{graph_p-x_2.png}
+	\caption{\textit{График зависимости $P$ от $x$ для второй трубы}}
+	\label{graph:p-x-2}
+\end{figure}
+
+Из графиков видно, что значение $l_\text{уст}$ значительно меньше, чем теоретическое значение.
+
+\clearpage
+
+\subsection{Проверка зависимости расхода от радиуса}
+
+Данный пункт работы не выполнялся, так как не выполнялся пункт \ref{p:10}.
+
+\subsection{Зависимость $Q(\Delta P) на турбулентном участке$}
+
+На турбулентном участке расход $Q$ должен линейно зависеть от $\sqrt{\Delta P r^5}$, для проверки этой зависимости воспользуемся МНК. В данном случае $x = \sqrt{\Delta P r^5}$, а $y = Q$. Параметры наилучшей прямой можно найти как:
+
+\begin{equation}\label{eq:mnk-linear}
+    k = \frac{\langle x y \rangle}{\langle x^2 \rangle}, \ \ \ \sigma_k = \frac{1}{\sqrt{n}} \sqrt{\frac{\langle y^2 \rangle}{\langle x^2 \rangle} - k^2}
+\end{equation}
+
+Посчитаем коэффициенты наилучшей прямой:
+
+\begin{equation*}
+    k = \frac{1361,819}{17204,738} \approx 0,0792 \ \frac{\text{л}}{\text{мин}} \cdot \frac{1}{\sqrt{\text{Па} \cdot \text{мм}^5}}
+\end{equation*}
+\begin{equation*}
+    \sigma_k = \sigma_k = \frac{1}{\sqrt{32}} \sqrt{\frac{{107,825}^2}{{17204,738}^2} - {0,0792}^2} \approx 0,0002 \ \frac{\text{л}}{\text{мин}} \cdot \frac{1}{\sqrt{\text{Па} \cdot \text{мм}^5}}
+\end{equation*}
+
+Нанесём прямую и точки на рис. \ref{graph:q-pr}.
+
+\begin{figure}[h!]
+        \centering
+	\includegraphics[width=1\textwidth]{graph_q-pr.png}
+	\caption{\textit{График зависимости $Q$ от $\sqrt{\Delta P r^5}$}}
+	\label{graph:q-pr}
+\end{figure}
+
+Из графика видно, что зависимость выполняется.
+
+\clearpage
 
 
 
